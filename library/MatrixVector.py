@@ -73,7 +73,7 @@ def get_json_docs(list_ids):
     list_docs = []
     for item in list_ids:
         doc = docs_col.find_one({"_id": ObjectId(str(item['id']))})
-        doc['similarity'] = item['similarity']
+        # doc['similarity'] = item['similarity']
         doc.pop('_id', None)
         print(doc)
         list_docs.append(doc)
@@ -87,12 +87,12 @@ def find_docs(object, index):
     print(doc['content'])
 
 if __name__ == '__main__':
-    # store_matrix()
-    matrix_vectors = get_matrix_vectors()
-    articles_vi = docs_col.find({"lang": 'vietnamese'})
-    docs = get_list_similarity(keyword2matrix(articles_vi[6]['keyword']), matrix_vectors)
-    sorted_docs = get_documents(docs)
+    store_matrix()
+    # matrix_vectors = get_matrix_vectors()
+    # articles_vi = docs_col.find({"lang": 'vietnamese'})
+    # docs = get_list_similarity(keyword2matrix(articles_vi[6]['keyword']), matrix_vectors)
+    # sorted_docs = get_documents(docs)
 
-    # test
-    title = articles_vi[6]['title']
-    pdb.set_trace()
+    # # test
+    # title = articles_vi[6]['title']
+    # pdb.set_trace()

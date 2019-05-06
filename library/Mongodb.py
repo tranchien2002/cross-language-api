@@ -1,7 +1,9 @@
 from pymongo import MongoClient
 import pdb
 client = MongoClient('localhost', 27017)
-db = client.cross_language
+db = client.test_15
+
+
 
 def single_insert(colection, document):
     col = db[colection]
